@@ -4,19 +4,23 @@
   
   
   <entry>
-    <title>我的第二篇博客</title>
+    <title>HelloWorld</title>
     <link href="/2025/01/07/hello-world/"/>
     <url>/2025/01/07/hello-world/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>都和你说了什么都没有，真的什么都没有</p>]]></content>
     
+    
+    <categories>
+      
+      <category>博文</category>
+      
+    </categories>
     
     
     <tags>
       
-      <tag>开始</tag>
-      
-      <tag>第一篇</tag>
+      <tag>我的第一篇博客</tag>
       
     </tags>
     
