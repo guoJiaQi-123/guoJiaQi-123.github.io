@@ -19,28 +19,27 @@
   <meta name="author" content="Ovo-">
   <meta name="keywords" content="hexo, blog, fluid theme, personal blog">
   
-    <meta name="description" content="InnoDB引擎使用一个缓冲池来缓存数据页和索引页。缓冲池的作用是将表中的数据和索引页面加载到内存中，这样对数据的读写就可以通过内存进行，而不是每次都访问磁盘。">
+    <meta name="description" content="给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。字母异位词 是由重新排列源单词的所有字母得到的一个新单词。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL的BufferPool和ChangeBuffer">
-<meta property="og:url" content="http://example.com/2025/01/20/MySQL%E7%9A%84BufferPool%E5%92%8CChangeBuffer/index.html">
+<meta property="og:title" content="2.字母异位词分组">
+<meta property="og:url" content="http://example.com/2025/01/15/002-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/index.html">
 <meta property="og:site_name" content="Ovo&#39;s Blog">
-<meta property="og:description" content="InnoDB引擎使用一个缓冲池来缓存数据页和索引页。缓冲池的作用是将表中的数据和索引页面加载到内存中，这样对数据的读写就可以通过内存进行，而不是每次都访问磁盘。">
+<meta property="og:description" content="给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。字母异位词 是由重新排列源单词的所有字母得到的一个新单词。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/page/bufferpool.png">
-<meta property="article:published_time" content="2025-01-19T23:11:55.000Z">
-<meta property="article:modified_time" content="2025-01-19T23:26:45.156Z">
+<meta property="og:image" content="http://example.com/img/page/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84.png">
+<meta property="article:published_time" content="2025-01-15T11:31:58.000Z">
+<meta property="article:modified_time" content="2025-01-15T12:21:15.974Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="MySQL">
-<meta property="article:tag" content="BufferPool">
-<meta property="article:tag" content="ChangeBuffer">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/page/bufferpool.png">
+<meta name="twitter:image" content="http://example.com/img/page/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>MySQL的BufferPool和ChangeBuffer - Ovo&#39;s Blog</title>
+  <title>2.字母异位词分组 - Ovo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -210,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MySQL的BufferPool和ChangeBuffer"></span>
+            <span id="subtitle" data-typed-text="2.字母异位词分组"></span>
           
         </div>
 
@@ -226,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-20 07:11" pubdate>
-          2025年1月20日 早上
+        <time datetime="2025-01-15 19:31" pubdate>
+          2025年1月15日 晚上
         </time>
       </span>
     
@@ -239,7 +238,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.2k 字
+          927 字
         
       </span>
     
@@ -251,7 +250,7 @@
         
         
           <!-- compatible with older versions-->
-          11 分钟
+          8 分钟
         
       </span>
     
@@ -297,13 +296,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">MySQL的BufferPool和ChangeBuffer</h1>
+            <h1 id="seo-header">2.字母异位词分组</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2025-01-20T07:26:45+08:00
+                    本文最后更新于：2025-01-15T20:21:15+08:00
                   
                   
 
@@ -313,68 +312,36 @@
             
               <div class="markdown-body">
                 
-                <h1 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h1><p>MySQL可以通过B+树来减少索引查处时的IO磁盘次数，但是每次查找、新增都去做磁盘IO的话，如果频繁操作还是会遇到瓶颈。因此就有<strong>Buffer pool</strong>和<strong>Change buffer</strong>的出现。</p>
-<h2 id="Buffer-pool"><a href="#Buffer-pool" class="headerlink" title="Buffer pool"></a>Buffer pool</h2><p><strong>目的：buffer pool是为了减少磁盘IO的读写次数。</strong></p>
-<p>假如没有buffer pool，则每次查询都会从磁盘中读取，进行IO操作。</p>
-<p>因此会在内存中专门取一大块区域用作Buffer pool用来保存一些已经读过的页和周围的页数据（<strong>空间局部性</strong>），这样的的话当下次<strong>查询数据</strong>时会在Buffer pool查询是否存在需要的页，减少读写IO次数。</p>
-<p>当修改数据时，同样会先修改buffer pool中的数据，被修改的页称为脏页，一般会采用<strong>redo log持久化机制</strong>，将脏页统一写入到磁盘中。</p>
-<h3 id="buffer-pool结构"><a href="#buffer-pool结构" class="headerlink" title="buffer pool结构"></a>buffer pool结构</h3><p>buffer pool涉及到三个链表：</p>
-<p><img src="/img/post/MySQL%E7%9A%84BufferPool%E5%92%8CChangeBuffer.assets/czljpr6w6ss52_95f7676e495d46d7986fed0584be960c.png" srcset="/img/loading.gif" lazyload alt="buffer pool涉及到的三个链表"></p>
+                <h1 id="49-字母异位词分组"><a href="#49-字母异位词分组" class="headerlink" title="49. 字母异位词分组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/group-anagrams/">49. 字母异位词分组</a></h1><p>给你一个字符串数组，请你将 <strong>字母异位词</strong> 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><strong>字母异位词</strong> 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入: strs = [<span class="hljs-string">&quot;eat&quot;</span>, <span class="hljs-string">&quot;tea&quot;</span>, <span class="hljs-string">&quot;tan&quot;</span>, <span class="hljs-string">&quot;ate&quot;</span>, <span class="hljs-string">&quot;nat&quot;</span>, <span class="hljs-string">&quot;bat&quot;</span>]<br>输出: [[<span class="hljs-string">&quot;bat&quot;</span>],[<span class="hljs-string">&quot;nat&quot;</span>,<span class="hljs-string">&quot;tan&quot;</span>],[<span class="hljs-string">&quot;ate&quot;</span>,<span class="hljs-string">&quot;eat&quot;</span>,<span class="hljs-string">&quot;tea&quot;</span>]]<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入: strs = [<span class="hljs-string">&quot;&quot;</span>]<br>输出: <span class="hljs-string">[[&quot;&quot;]]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入: strs = [<span class="hljs-string">&quot;a&quot;</span>]<br>输出: <span class="hljs-string">[[&quot;a&quot;]]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li><p>free list 组织 buffer pool 中未使用的<strong>空闲页</strong>；</p>
-</li>
-<li><p>flush list 组织buffer pool 中<strong>脏页</strong>，也就是待刷盘的页；</p>
-</li>
-<li><p>lru list 组织 buffer pool 中冷热数据，当 buffer pool 没有空闲页，将从 lru list 中最久未使用的数据进行淘汰；</p>
-</li>
+<li><code>1 &lt;= strs.length &lt;= 104</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅包含小写字母</li>
 </ul>
-<h3 id="Buffer-pool-LRU算法"><a href="#Buffer-pool-LRU算法" class="headerlink" title="Buffer pool&amp;LRU算法"></a>Buffer pool&amp;LRU算法</h3><p>buffer pool 优化了LRU方法。因为MySQL有<strong>预读机制</strong>，每次将缓存页加载进Buffer pool时，会将目标缓存页附近的数据页也加进来。就是磁盘读取的空间局部性原理。</p>
-<p>这样会导致一个问题，可能被预读加进来的数据页，再之后可能长时间就没访问过了。</p>
-<h4 id="优化一、冷热数据"><a href="#优化一、冷热数据" class="headerlink" title="优化一、冷热数据"></a>优化一、冷热数据</h4><p><strong>目的：解决预读失效问题</strong></p>
-<p><img src="/img/post/MySQL%E7%9A%84BufferPool%E5%92%8CChangeBuffer.assets/czljpr6w6ss52_65433420564e45cb938ad162c7f421eb.png" srcset="/img/loading.gif" lazyload alt="buff pool的LRU结构"></p>
-<p><strong>Buffer pool中5&#x2F;8的区域为new sublist，3&#x2F;8的区域为old sublist</strong>。</p>
-<blockquote>
-<ul>
-<li>因此数据加入pool缓冲池时，优先进入old sublist，<strong>页被访问时</strong>会进入new sublist，在free list<br>不足时，优先刷入那些old sublist区域的进入磁盘，再清空pool区域。</li>
-<li>所以那些被预读加进来的数据页，如果没被访问，就会一直呆在old区域，等到空间不足时，会被提前清空。这样就能解决预读失效的问题。</li>
-</ul>
-</blockquote>
-<h4 id="优化二、时间阈值"><a href="#优化二、时间阈值" class="headerlink" title="优化二、时间阈值"></a>优化二、时间阈值</h4><p><strong>目的：解决批量查询数据时，大量热数据淘汰问题</strong></p>
-<blockquote>
-<p>页被访问，且在old sublist停留时间超过配置阈值的，才进入new sublist，以解决批量数据访问，大量热数据淘汰的问题。通常阈值设置为1s。</p>
-</blockquote>
-<p><strong>为什么是1s?</strong></p>
-<p>因为预读机制将加载进来的数据页通常是会在1s之内就访问，通常1s之内就会访问这些加载进来的数据页，可能1s之后就不会再被访问了。</p>
-<p>因此如果这时将这些访问了的缓存页就加进new区域也不太好，因此通过配置时间阈值。在1s之后在被访问的数据页才进入new区域，并放入new区域的头部，说明后续可能还会被访问到。而1s之前被访问的数据页就不变。</p>
-<h2 id="Change-buffer"><a href="#Change-buffer" class="headerlink" title="Change buffer"></a>Change buffer</h2><p>假如一个需要修改的页数据没有在buffer pool中，我们需要怎么操作：</p>
-<blockquote>
+<h2 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h2><p>核心点在于如何判断是否是字母异位词，我们可以从字母异位词的结构入手，发现每个字母异位词中的每个字符 出现的次数都是一样的，只是顺序不一样，这里有两种实现思路：</p>
 <ol>
-<li>将数据页调入到buffer pool中， 一次随机磁盘IO</li>
-<li>更新buffer pool中的数据 ， 一次内存IO</li>
-<li>将修改写入redo log，一次磁盘顺序写IO</li>
+<li>自定义一个ArrayKey类型，专门用于判断是否是字母异位词，原理是，在ArrayKey中维护一个长度位26的数组，每一位存放一个字母出现的个数，在有参构造中，拿到字符串后，遍历每个字符，将对应的索引处的元素加一，重写ArrayKey的equals和hashCode方法，即可实现通过数组比较是否是字母异位词（如果是字母异位词，那么肯定有相同的数组，因为每个字符出现的次数都一样）</li>
+<li>第二种方法是基于排序的，既然字母异位词只是字符排列不相同的单词，那么我们可以将每个单词都进行一个排序，这样，如果是字母异位词，那么排序后的字符串一定都相等，实现上就是先将字符串转换为字符数组，然后使用Arrays.sort方法对字符数组进行排序后，再转回字符串，如果排序后的字符串相同，肯定是字母异位词</li>
 </ol>
-</blockquote>
-<p>看起来操作还行，但是如果在写多读少的场景下的话，我们有更好的方法，也就是innodb的change buffer。</p>
-<h3 id="Change-buffer工作原理"><a href="#Change-buffer工作原理" class="headerlink" title="Change buffer工作原理"></a>Change buffer工作原理</h3><blockquote>
-<p>Change buffer 缓存<strong>非唯一索引</strong>的数据变更（DML 操作，只记录操作，不记录结果），当访问这个数据页或者定期时间到达Change buffer 中的数据将会异步 merge 到磁盘当中；</p>
-</blockquote>
-<p>因此对于刚刚的需要修改的页数据没有在buffer pool中，使用change buffer的操作：</p>
-<blockquote>
-<ol>
-<li>将修改的操作写入到change buffer中 ，一次内存IO</li>
-<li>写入日志到redolog中，等待触发merge，一次磁盘顺序写IO</li>
-</ol>
-</blockquote>
-<p>可以看到使用change buffer的话在写多读少的场景下会节省最耗时的磁盘IO读写的次数。</p>
-<h3 id="change-buffer不适用的场景"><a href="#change-buffer不适用的场景" class="headerlink" title="change buffer不适用的场景"></a>change buffer不适用的场景</h3><blockquote>
-<ul>
-<li><strong>唯一索引的场景</strong>：唯一索引需要判断是否冲突，也就是是否唯一（唯一性校验），这个判断需要全局扫描，需要从磁盘读数据，change buffer也就没什么用了。</li>
-<li><strong>写少读多的场景</strong>：因为修改数据页后读取该页会触发merge，而我们的目的就是为了把多次数据页的修改通过一次merge更新到磁盘中，如果读数据的场景多了，那么merge的次数多，也不会减少IO操作次数了。</li>
-</ul>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="note note-primary">
-            <p>当数据不在buffer pool中，修改页数据后然后读取数据的步骤，理解一下buffer pool怎么和change buffer工作的：</p><p><strong>修改操作：</strong></p><ol><li>在buffer poo匹配不到页数据；</li><li>在change buffer中记录该数据的修改操作；</li></ol><p><strong>查询操作：</strong></p><ol><li>在buffer pool 中匹配不到页数据；</li><li>在磁盘中读取页数据；</li><li>change buffer中读取做merge操作，放回buffer pool中；</li></ol>
+<p>判断字母是不是异位词的问题解决后，我们就可以通过异位词判断之前是否添加过该异位词对于的列表，如果没有，则创建新的列表放入map中，如果有，则取旧的列表，直接将当前字符串添加到列表中即可</p>
+<div class="note note-primary">
+            <p>map的key表示可以判断是否是字母异位词的结构，方法一是一个ArrayKey对象，方法二则是排序后的字符串</p><p>map的value则是当前类型的字母异位词对应的存放原字符串的列表</p>
           </div>
+
+<h2 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">_2_groupAnagrams</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 通过一个数组判定字母异位词</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayKey</span> &#123;<br>        <span class="hljs-type">int</span>[] array = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<br><br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object object)</span> &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span> == object) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">if</span> (object == <span class="hljs-literal">null</span> || getClass() != object.getClass()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-type">ArrayKey</span> <span class="hljs-variable">arrayKey</span> <span class="hljs-operator">=</span> (ArrayKey) object;<br>            <span class="hljs-keyword">return</span> Objects.deepEquals(array, arrayKey.array);<br>        &#125;<br><br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> &#123;<br>            <span class="hljs-keyword">return</span> Arrays.hashCode(array);<br>        &#125;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayKey</span><span class="hljs-params">(String str)</span> &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; str.length(); i++) &#123;<br>                <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> str.charAt(i);<br>                array[c - <span class="hljs-number">97</span>]++;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="hljs-title function_">groupAnagrams</span><span class="hljs-params">(String[] strs)</span> &#123;<br>        HashMap&lt;ArrayKey, List&lt;String&gt;&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String str : strs) &#123;<br>            <span class="hljs-comment">// 字母异位词的ArrayKey一定相同</span><br>            <span class="hljs-type">ArrayKey</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayKey</span>(str);<br>            List&lt;String&gt; list = map.computeIfAbsent(key, k -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;());<br>            list.add(str);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(map.values());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 所有的字母异位词排序后都一样</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> strs</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="hljs-title function_">groupAnagrams</span><span class="hljs-params">(String[] strs)</span> &#123;<br>    <span class="hljs-comment">// 「key:排序后的字母异位词，value:所有的字母异位词」</span><br>    HashMap&lt;String, List&lt;String&gt;&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-keyword">for</span> (String str : strs) &#123;<br>        <span class="hljs-comment">// 转字符数组</span><br>        <span class="hljs-type">char</span>[] charArray = str.toCharArray();<br>        <span class="hljs-comment">// 排序</span><br>        Arrays.sort(charArray);<br>        <span class="hljs-comment">// 转字符串</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">string</span> <span class="hljs-operator">=</span> Arrays.toString(charArray);<br>        <span class="hljs-comment">// 存在则返回链表，不存在则创建新的链表</span><br>        List&lt;String&gt; list = map.computeIfAbsent(string, k -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;());<br>        list.add(str);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(map.values());<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -394,7 +361,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
+  <a href="/categories/hot100%E7%AE%97%E6%B3%95/" class="category-chain-item">hot100算法</a>
   
   
 
@@ -409,11 +376,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/MySQL/" class="print-no-link">#MySQL</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
-        <a href="/tags/BufferPool/" class="print-no-link">#BufferPool</a>
-      
-        <a href="/tags/ChangeBuffer/" class="print-no-link">#ChangeBuffer</a>
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
       
     </div>
   
@@ -425,8 +390,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MySQL的BufferPool和ChangeBuffer</div>
-      <div>http://example.com/2025/01/20/MySQL的BufferPool和ChangeBuffer/</div>
+      <div>2.字母异位词分组</div>
+      <div>http://example.com/2025/01/15/002-字母异位词分组/</div>
     </div>
     <div class="license-meta">
       
@@ -438,7 +403,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月20日</div>
+          <div>2025年1月15日</div>
         </div>
       
       
@@ -470,9 +435,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/20/008-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" title="8.无重复字符的最长子串">
+                      <a href="/2025/01/15/003-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/" title="3.最长连续序列">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">8.无重复字符的最长子串</span>
+                        <span class="hidden-mobile">3.最长连续序列</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -480,8 +445,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/15/007-%E6%8E%A5%E9%9B%A8%E6%B0%B4/" title="7.接雨水">
-                        <span class="hidden-mobile">7.接雨水</span>
+                      <a href="/2025/01/15/001-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="1.两数之和">
+                        <span class="hidden-mobile">1.两数之和</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
