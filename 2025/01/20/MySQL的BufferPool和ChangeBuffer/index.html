@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/page/bufferpool.png">
 <meta property="article:published_time" content="2025-01-19T23:11:55.000Z">
-<meta property="article:modified_time" content="2025-01-19T23:26:45.156Z">
+<meta property="article:modified_time" content="2025-01-27T14:05:07.779Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="BufferPool">
@@ -239,7 +239,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.2k 字
+          1.3k 字
         
       </span>
     
@@ -303,7 +303,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2025-01-20T07:26:45+08:00
+                    本文最后更新于：2025-01-27T22:05:07+08:00
                   
                   
 
@@ -313,7 +313,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h1><p>MySQL可以通过B+树来减少索引查处时的IO磁盘次数，但是每次查找、新增都去做磁盘IO的话，如果频繁操作还是会遇到瓶颈。因此就有<strong>Buffer pool</strong>和<strong>Change buffer</strong>的出现。</p>
+                <h1 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h1><p>MySQL可以通过B+树来减少索引查找时的磁盘IO次数，但是每次查找、新增都去做磁盘IO的话，如果频繁操作还是会遇到瓶颈。因此就有<strong>Buffer pool</strong>和<strong>Change buffer</strong>的出现。</p>
 <h2 id="Buffer-pool"><a href="#Buffer-pool" class="headerlink" title="Buffer pool"></a>Buffer pool</h2><p><strong>目的：buffer pool是为了减少磁盘IO的读写次数。</strong></p>
 <p>假如没有buffer pool，则每次查询都会从磁盘中读取，进行IO操作。</p>
 <p>因此会在内存中专门取一大块区域用作Buffer pool用来保存一些已经读过的页和周围的页数据（<strong>空间局部性</strong>），这样的的话当下次<strong>查询数据</strong>时会在Buffer pool查询是否存在需要的页，减少读写IO次数。</p>
@@ -335,7 +335,7 @@
 <p><strong>Buffer pool中5&#x2F;8的区域为new sublist，3&#x2F;8的区域为old sublist</strong>。</p>
 <blockquote>
 <ul>
-<li>因此数据加入pool缓冲池时，优先进入old sublist，<strong>页被访问时</strong>会进入new sublist，在free list<br>不足时，优先刷入那些old sublist区域的进入磁盘，再清空pool区域。</li>
+<li>因此数据加入pool缓冲池时，优先进入old sublist，<strong>页被访问时</strong>会进入new sublist，在free list<br>不足时，优先刷入那些old sublist区域的页进入磁盘，再清空buffer pool区域。</li>
 <li>所以那些被预读加进来的数据页，如果没被访问，就会一直呆在old区域，等到空间不足时，会被提前清空。这样就能解决预读失效的问题。</li>
 </ul>
 </blockquote>
@@ -344,8 +344,8 @@
 <p>页被访问，且在old sublist停留时间超过配置阈值的，才进入new sublist，以解决批量数据访问，大量热数据淘汰的问题。通常阈值设置为1s。</p>
 </blockquote>
 <p><strong>为什么是1s?</strong></p>
-<p>因为预读机制将加载进来的数据页通常是会在1s之内就访问，通常1s之内就会访问这些加载进来的数据页，可能1s之后就不会再被访问了。</p>
-<p>因此如果这时将这些访问了的缓存页就加进new区域也不太好，因此通过配置时间阈值。在1s之后在被访问的数据页才进入new区域，并放入new区域的头部，说明后续可能还会被访问到。而1s之前被访问的数据页就不变。</p>
+<p>因为预读机制将加载进来的数据页通常是会在1s之内就访问，如果1s之内没有访问，可能1s之后就不会再被访问了。</p>
+<p>因此如果这时将这些访问了的缓存页就加进new区域也不太好，因此通过配置时间阈值。在1s之后仍然被访问的数据页才进入new区域，并放入new区域的头部，说明后续可能还会被访问到。而1s之前被访问的数据页就不变。</p>
 <h2 id="Change-buffer"><a href="#Change-buffer" class="headerlink" title="Change buffer"></a>Change buffer</h2><p>假如一个需要修改的页数据没有在buffer pool中，我们需要怎么操作：</p>
 <blockquote>
 <ol>
@@ -356,16 +356,16 @@
 </blockquote>
 <p>看起来操作还行，但是如果在写多读少的场景下的话，我们有更好的方法，也就是innodb的change buffer。</p>
 <h3 id="Change-buffer工作原理"><a href="#Change-buffer工作原理" class="headerlink" title="Change buffer工作原理"></a>Change buffer工作原理</h3><blockquote>
-<p>Change buffer 缓存<strong>非唯一索引</strong>的数据变更（DML 操作，只记录操作，不记录结果），当访问这个数据页或者定期时间到达Change buffer 中的数据将会异步 merge 到磁盘当中；</p>
+<p>Change buffer <span class="label label-info"> 缓存</span><strong>非唯一索引</strong>的<span class="label label-info"> 数据变更</span>（DML 操作，只记录操作，不记录结果），当访问这个数据页或者定期时间到达Change buffer 中的数据将会异步 merge 到磁盘当中；</p>
 </blockquote>
 <p>因此对于刚刚的需要修改的页数据没有在buffer pool中，使用change buffer的操作：</p>
 <blockquote>
 <ol>
 <li>将修改的操作写入到change buffer中 ，一次内存IO</li>
-<li>写入日志到redolog中，等待触发merge，一次磁盘顺序写IO</li>
+<li>写入日志到redo log中，等待触发merge，一次磁盘顺序写IO</li>
 </ol>
 </blockquote>
-<p>可以看到使用change buffer的话在写多读少的场景下会节省最耗时的磁盘IO读写的次数。</p>
+<p>可以看到使用change buffer的话在写多读少的场景下会节省最耗时的<strong>随机磁盘IO</strong>读写的次数。</p>
 <h3 id="change-buffer不适用的场景"><a href="#change-buffer不适用的场景" class="headerlink" title="change buffer不适用的场景"></a>change buffer不适用的场景</h3><blockquote>
 <ul>
 <li><strong>唯一索引的场景</strong>：唯一索引需要判断是否冲突，也就是是否唯一（唯一性校验），这个判断需要全局扫描，需要从磁盘读数据，change buffer也就没什么用了。</li>
@@ -373,7 +373,7 @@
 </ul>
 </blockquote>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="note note-primary">
-            <p>当数据不在buffer pool中，修改页数据后然后读取数据的步骤，理解一下buffer pool怎么和change buffer工作的：</p><p><strong>修改操作：</strong></p><ol><li>在buffer poo匹配不到页数据；</li><li>在change buffer中记录该数据的修改操作；</li></ol><p><strong>查询操作：</strong></p><ol><li>在buffer pool 中匹配不到页数据；</li><li>在磁盘中读取页数据；</li><li>change buffer中读取做merge操作，放回buffer pool中；</li></ol>
+            <p>当数据不在buffer pool中，修改页数据后然后读取数据的步骤，理解一下buffer pool怎么和change buffer工作的：</p><p><strong>修改操作：</strong></p><ol><li>在buffer pool匹配不到页数据；</li><li>在change buffer中记录该数据的修改操作<span class="label label-info"> 「缓存数据变更」</span>；</li></ol><p><strong>查询操作：</strong></p><ol><li>在buffer pool 中匹配不到页数据；</li><li>在磁盘中读取页数据；</li><li>从change buffer中读取之前记录的数据变更操作，将数据做merge操作后放回buffer pool中；</li></ol>
           </div>
 
 
