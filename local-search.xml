@@ -58,6 +58,33 @@
   
   
   <entry>
+    <title>Java热部署插件JRebel</title>
+    <link href="/2025/01/22/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel/"/>
+    <url>/2025/01/22/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel/</url>
+    
+    <content type="html"><![CDATA[<h2 id="JRebel"><a href="#JRebel" class="headerlink" title="JRebel"></a>JRebel</h2><p>官方文档：<a href="https://www.jrebel.com/">https://www.jrebel.com/</a></p><h3 id="什么是JRebel"><a href="#什么是JRebel" class="headerlink" title="什么是JRebel"></a>什么是JRebel</h3><div class="note note-primary">            <p>JRebel 是国外团队开发的一款收费工具，JRebel 允许开发团队在有限的时间内完成更多的任务修正更多的问题，发布更高质量的软件产品，JRebel 可快速实现热部署，节省了大量重启时间，提高了个人开发效率。JRebel 是一款 JAVA 虚拟机插件，它使得 Java 程序员能在不进行重部署的情况下，即时看到代码的改变对一个应用程序带来的影响。</p>          </div><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>在庞大的项目，我们启动项目的时间较长，尤其每次修改完代码要进行测试，就要重新编译启动项目，耗时且繁琐，热部署插件通过设置更新操作，就可以实现快速启动项目，开发效率显著提高。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol><li>需要安装JRebel</li></ol><p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526765527-53252d0e-61f1-47a8-af4e-089225792274.png" alt="img"></p><ol start="2"><li>激活插件</li></ol><p>最新激活地址<code>http://42.193.18.168:8088/5a3f317c-3de0-4676-9b20-9c16cec17d90</code></p><p>如果激活过期, 可以重新生成GUID , 替换原来的GUID即可。</p><p>在线生成GUID：<a href="https://www.guidgen.com/">https://www.guidgen.com/</a></p><p>在下面的框中输入激活的url地址，后续可能会失效！！！</p><p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526795772-aa99b716-c4b7-4cb0-9241-59ef495079cf.png" alt="img"></p><ol start="3"><li>设置离线使用</li></ol><p>JRebel激活之后默认是联网的 , 在该模式下 , JRebel会一直联网监测激活信息 ，所以需要设置离线使用。</p><p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526877581-9bd97875-f74e-4678-9ecf-7b4671a38994.png" alt="img"></p><ol start="4"><li>设置更新编译项目</li></ol><p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526889810-f5bd6276-e5ea-4708-8b88-088a6f553a81.png" alt="img"></p><ol start="5"><li>设置完之后重新启动IDEA</li></ol><p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526934446-c23a513b-e26f-4568-bd34-d42a63972b56.png" alt="img"></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过以上设置，就可以实现项目的热部署以及快速编译，大大提高开发效率。 </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>工具分享</tag>
+      
+      <tag>热部署</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>10.和为K的子数组</title>
     <link href="/2025/01/22/010-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
     <url>/2025/01/22/010-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</url>
