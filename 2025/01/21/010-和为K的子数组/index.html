@@ -19,27 +19,27 @@
   <meta name="author" content="Ovo-">
   <meta name="keywords" content="hexo, blog, fluid theme, personal blog">
   
-    <meta name="description" content="JRebel 是国外团队开发的一款收费工具，JRebel 允许开发团队在有限的时间内完成更多的任务修正更多的问题，发布更高质量的软件产品，JRebel 可快速实现热部署，节省了大量重启时间，提高了个人开发效率。JRebel 是一款 JAVA 虚拟机插件，它使得 Java 程序员能在不进行重部署的情况下，即时看到代码的改变对一个应用程序带来的影响。">
+    <meta name="description" content="给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java热部署插件JRebel">
-<meta property="og:url" content="http://example.com/2025/01/22/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel/index.html">
+<meta property="og:title" content="10.和为K的子数组">
+<meta property="og:url" content="http://example.com/2025/01/21/010-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="Ovo&#39;s Blog">
-<meta property="og:description" content="JRebel 是国外团队开发的一款收费工具，JRebel 允许开发团队在有限的时间内完成更多的任务修正更多的问题，发布更高质量的软件产品，JRebel 可快速实现热部署，节省了大量重启时间，提高了个人开发效率。JRebel 是一款 JAVA 虚拟机插件，它使得 Java 程序员能在不进行重部署的情况下，即时看到代码的改变对一个应用程序带来的影响。">
+<meta property="og:description" content="给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/page/JRebel.png">
-<meta property="article:published_time" content="2025-01-22T01:43:14.000Z">
-<meta property="article:modified_time" content="2025-02-14T10:04:54.453Z">
+<meta property="og:image" content="http://example.com/img/page/%E5%92%8C%E4%B8%BA%20K%20%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.png">
+<meta property="article:published_time" content="2025-01-21T10:07:15.000Z">
+<meta property="article:modified_time" content="2025-02-15T15:03:17.150Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="工具分享">
-<meta property="article:tag" content="热部署">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/page/JRebel.png">
+<meta name="twitter:image" content="http://example.com/img/page/%E5%92%8C%E4%B8%BA%20K%20%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java热部署插件JRebel - Ovo&#39;s Blog</title>
+  <title>10.和为K的子数组 - Ovo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java热部署插件JRebel"></span>
+            <span id="subtitle" data-typed-text="10.和为K的子数组"></span>
           
         </div>
 
@@ -225,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-22 09:43" pubdate>
-          2025年1月22日 上午
+        <time datetime="2025-01-21 18:07" pubdate>
+          2025年1月21日 晚上
         </time>
       </span>
     
@@ -238,7 +238,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          399 字
+          831 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
           <!-- compatible with older versions-->
-          4 分钟
+          7 分钟
         
       </span>
     
@@ -296,13 +296,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Java热部署插件JRebel</h1>
+            <h1 id="seo-header">10.和为K的子数组</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2025-02-14T18:04:54+08:00
+                    本文最后更新于：2025-02-15T23:03:17+08:00
                   
                   
 
@@ -312,38 +312,30 @@
             
               <div class="markdown-body">
                 
-                <h2 id="JRebel"><a href="#JRebel" class="headerlink" title="JRebel"></a>JRebel</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://www.jrebel.com/">https://www.jrebel.com/</a></p>
-<h3 id="什么是JRebel"><a href="#什么是JRebel" class="headerlink" title="什么是JRebel"></a>什么是JRebel</h3><div class="note note-primary">
-            <p>JRebel 是国外团队开发的一款收费工具，JRebel 允许开发团队在有限的时间内完成更多的任务修正更多的问题，发布更高质量的软件产品，JRebel 可快速实现热部署，节省了大量重启时间，提高了个人开发效率。JRebel 是一款 JAVA 虚拟机插件，它使得 Java 程序员能在不进行重部署的情况下，即时看到代码的改变对一个应用程序带来的影响。</p>
+                <h1 id="560-和为-K-的子数组"><a href="#560-和为-K-的子数组" class="headerlink" title="560. 和为 K 的子数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subarray-sum-equals-k/">560. 和为 K 的子数组</a></h1><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 <em>该数组中和为 <code>k</code> 的子数组的个数</em> 。</p>
+<p>子数组是数组中元素的连续非空序列。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">输入：nums </span>=<span class="hljs-string"> [1,1,1], k = 2</span><br><span class="hljs-string">输出：2</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">输入：nums </span>=<span class="hljs-string"> [1,2,3], k = 3</span><br><span class="hljs-string">输出：2</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 2 * 104</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+<li><code>-107 &lt;= k &lt;= 107</code></li>
+</ul>
+<h1 id="题解思路"><a href="#题解思路" class="headerlink" title="题解思路"></a>题解思路</h1><div class="note note-primary">
+            <ol><li>前缀和的概念<br>  什么是前缀和呢？前缀和是指数组中从第一个元素到当前位置的所有元素的累加和。例如，对于数组 <code>[1, 2, 3]</code>，前缀和就是：</li></ol><ul><li><code>前缀和[0] = 0</code>（表示没有任何元素时的和）</li><li><code>前缀和[1] = 1</code>（表示第一个元素的和）</li><li><code>前缀和[2] = 1 + 2 = 3</code>（表示前两个元素的和）</li><li><code>前缀和[3] = 1 + 2 + 3 = 6</code>（表示所有元素的和）</li></ul><ol start="2"><li><p>哈希表的作用<br>我们使用哈希表来存储每一个前缀和出现的次数，目的是为了快速查询某个前缀和是否存在，避免重复计算。</p></li><li><p>算法步骤</p></li></ol><p>  <strong>初始化变量：</strong></p><ul><li><code>count</code> 用来记录符合条件的子数组的数量。</li><li><code>preSum</code> 用来保存当前的前缀和（即当前遍历到的位置的累加和）。</li><li><code>map</code> 用来记录每个前缀和出现的次数，初始时将 <code>map.put(0, 1)</code>，因为前缀和为 <code>0</code> 出现过一次（这个是为了考虑从数组的开头就符合条件的情况）。</li></ul><p>  <strong>遍历数组：</strong></p><ul><li>对每个元素 <code>num</code>，我们更新 <code>preSum</code>（即 <code>preSum += num</code>，<strong>计算当前的前缀和</strong>）。</li></ul><p>  <strong>检查是否存在符合条件的子数组</strong>：</p><ul><li>我们判断当前的 <code>preSum - k</code> 是否在哈希表中出现过。如果出现过，说明存在一个子数组的和等于 <code>k</code>。这个子数组的起始位置就是哈希表中存储的 <code>preSum - k</code> 对应的前缀和位置。</li><li>如果存在，则把 <code>map.get(preSum - k)</code> 的值加到 <code>count</code> 上，这个值代表了出现过多少次 <code>preSum - k</code>，也就是说，找到了多少个和为 <code>k</code> 的子数组。</li></ul><p>  <strong>更新哈希表</strong>：</p><ul><li>把当前的 <code>preSum</code> 存入哈希表 <code>map</code>，如果该前缀和已经出现过，则将其计数加 1；如果没有出现过，则初始化其计数为 1。</li></ul><p>  <strong>返回结果</strong></p><p>  最后，算法返回 <code>count</code>，即数组中和为 <code>k</code> 的子数组的个数。</p>
           </div>
 
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>在庞大的项目，我们启动项目的时间较长，尤其每次修改完代码要进行测试，就要重新编译启动项目，耗时且繁琐，热部署插件通过设置更新操作，就可以实现快速启动项目，开发效率显著提高。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
-<li>需要安装JRebel</li>
-</ol>
-<p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526765527-53252d0e-61f1-47a8-af4e-089225792274.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ol start="2">
-<li>激活插件</li>
-</ol>
-<p>最新激活地址<code>http://42.193.18.168:8088/5a3f317c-3de0-4676-9b20-9c16cec17d90</code></p>
-<p>如果激活过期, 可以重新生成GUID , 替换原来的GUID即可。</p>
-<p>在线生成GUID：<a target="_blank" rel="noopener" href="https://www.guidgen.com/">https://www.guidgen.com/</a></p>
-<p>在下面的框中输入激活的url地址，后续可能会失效！！！</p>
-<p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526795772-aa99b716-c4b7-4cb0-9241-59ef495079cf.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ol start="3">
-<li>设置离线使用</li>
-</ol>
-<p>JRebel激活之后默认是联网的 , 在该模式下 , JRebel会一直联网监测激活信息 ，所以需要设置离线使用。</p>
-<p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526877581-9bd97875-f74e-4678-9ecf-7b4671a38994.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ol start="4">
-<li>设置更新编译项目</li>
-</ol>
-<p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526889810-f5bd6276-e5ea-4708-8b88-088a6f553a81.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ol start="5">
-<li>设置完之后重新启动IDEA</li>
-</ol>
-<p><img src="/img/post/Java%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6JRebel.assets/1739526934446-c23a513b-e26f-4568-bd34-d42a63972b56.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过以上设置，就可以实现项目的热部署以及快速编译，大大提高开发效率。 </p>
+<h2 id="图解前缀和"><a href="#图解前缀和" class="headerlink" title="图解前缀和"></a>图解前缀和</h2><p><img src="/img/post/010-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.assets/PixPin_2025-01-22_08-22-26.gif" srcset="/img/loading.gif" lazyload alt="图解前缀和"></p>
+<p><img src="/img/post/010-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.assets/1737505399752-29.png" srcset="/img/loading.gif" lazyload alt="详解前缀和"></p>
+<h1 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * O（n2）时间复杂度高</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> nums</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> k</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">subarraySum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; start &lt; nums.length; start++) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> start; end &gt;= <span class="hljs-number">0</span>; end--) &#123;<br>            sum += nums[end];<br>            <span class="hljs-keyword">if</span> (sum == k) &#123;<br>                count++;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 前缀和 + 哈希表优化</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> nums</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> k</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">subarraySum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">preSum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 计算前缀和</span><br>    <span class="hljs-comment">// 存放出现过的前缀和「key:前缀和，value:这个前缀和出现过多少次」</span><br>    Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-comment">// 初始化map，前缀和为，出现过一次</span><br>    map.put(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums) &#123;<br>        preSum += num; <span class="hljs-comment">// 累加前缀和</span><br>        <span class="hljs-keyword">if</span> (map.containsKey(preSum - k)) &#123;<br>            <span class="hljs-comment">// 如果出现过preSum-k的前缀和，则累加出现的次数</span><br>            count += map.get(preSum - k);<br>        &#125;<br>        <span class="hljs-comment">// 将当前前缀和存入map集合，如果原先map集合中存在，则累加value，否则value为1</span><br>        map.put(preSum, map.getOrDefault(preSum, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -362,7 +354,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  <a href="/categories/hot100%E7%AE%97%E6%B3%95/" class="category-chain-item">hot100算法</a>
   
   
 
@@ -377,9 +369,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="print-no-link">#工具分享</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
-        <a href="/tags/%E7%83%AD%E9%83%A8%E7%BD%B2/" class="print-no-link">#热部署</a>
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
       
     </div>
   
@@ -391,8 +383,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java热部署插件JRebel</div>
-      <div>http://example.com/2025/01/22/Java热部署插件JRebel/</div>
+      <div>10.和为K的子数组</div>
+      <div>http://example.com/2025/01/21/010-和为K的子数组/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +396,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月22日</div>
+          <div>2025年1月21日</div>
         </div>
       
       
