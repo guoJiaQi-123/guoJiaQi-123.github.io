@@ -16,27 +16,30 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Ovo-">
   <meta name="keywords" content="hexo, blog, fluid theme, personal blog">
   
-    <meta name="description" content="title: 012.最小覆盖子串date: 2025-02-15 22:54:07author: Ovo-tags:  算法 刷题categories: hot100算法excerpt: 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。banner_img: &#x2F;img&#x2F;bg">
+    <meta name="description" content="给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="013.最大子数组和">
-<meta property="og:url" content="http://example.com/2025/02/21/013-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/index.html">
+<meta property="og:title" content="015.轮转数组">
+<meta property="og:url" content="http://example.com/2025/02/18/015-%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="Ovo&#39;s Blog">
-<meta property="og:description" content="title: 012.最小覆盖子串date: 2025-02-15 22:54:07author: Ovo-tags:  算法 刷题categories: hot100算法excerpt: 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。banner_img: &#x2F;img&#x2F;bg">
+<meta property="og:description" content="给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-21T14:13:50.000Z">
-<meta property="article:modified_time" content="2025-02-21T14:16:12.170Z">
+<meta property="og:image" content="http://example.com/img/page/%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84.png">
+<meta property="article:published_time" content="2025-02-18T14:54:07.000Z">
+<meta property="article:modified_time" content="2025-02-25T15:31:24.634Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="hexo, blog, fluid theme, personal blog">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/page/%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>013.最大子数组和 - Ovo&#39;s Blog</title>
+  <title>015.轮转数组 - Ovo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -200,13 +203,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/bg/%E4%BB%A3%E7%A0%81%E6%B2%A1%E5%86%99%E5%AE%8C.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/bg/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="013.最大子数组和"></span>
+            <span id="subtitle" data-typed-text="015.轮转数组"></span>
           
         </div>
 
@@ -216,14 +219,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        John Doe
+        Ovo-
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-21 22:13" pubdate>
-          2025年2月21日 晚上
+        <time datetime="2025-02-18 22:54" pubdate>
+          2025年2月18日 晚上
         </time>
       </span>
     
@@ -235,7 +238,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          99 字
+          496 字
         
       </span>
     
@@ -247,7 +250,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -293,13 +296,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">013.最大子数组和</h1>
+            <h1 id="seo-header">015.轮转数组</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2025-02-21T22:16:12+08:00
+                    本文最后更新于：2025-02-25T23:31:24+08:00
                   
                   
 
@@ -309,14 +312,53 @@
             
               <div class="markdown-body">
                 
-                <hr>
-<p>title: 012.最小覆盖子串<br>date: 2025-02-15 22:54:07<br>author: Ovo-<br>tags:</p>
+                <h1 id="189-轮转数组"><a href="#189-轮转数组" class="headerlink" title="189. 轮转数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/rotate-array/">189. 轮转数组</a></h1><p>给定一个整数数组 <code>nums</code>，将数组中的元素向右轮转 <code>k</code> 个位置，其中 <code>k</code> 是非负数。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">输入</span><span class="hljs-punctuation">:</span> <span class="hljs-string">nums = [1,2,3,4,5,6,7], k = 3</span><br><span class="hljs-attribute">输出</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[5,6,7,1,2,3,4]</span><br><span class="hljs-attribute">解释</span><span class="hljs-punctuation">:</span><br><span class="hljs-attribute">向右轮转 1 步</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[7,1,2,3,4,5,6]</span><br><span class="hljs-attribute">向右轮转 2 步</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[6,7,1,2,3,4,5]</span><br><span class="hljs-attribute">向右轮转 3 步</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[5,6,7,1,2,3,4]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs subunit">输入：nums = [<span class="hljs-string">-1</span>,<span class="hljs-string">-100</span>,3,99], k = 2<br>输出：[3,99,<span class="hljs-string">-1</span>,<span class="hljs-string">-100</span>]<br>解释: <br>向右轮转 1 步: [99,<span class="hljs-string">-1</span>,<span class="hljs-string">-100</span>,3]<br>向右轮转 2 步: [3,99,<span class="hljs-string">-1</span>,<span class="hljs-string">-100</span>]<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>算法</li>
-<li>刷题<br>categories:</li>
-<li>hot100算法<br>excerpt: 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。<br>banner_img: &#x2F;img&#x2F;bg&#x2F;你的名字.jpg<br>index_img: &#x2F;img&#x2F;page&#x2F;最小覆盖子串.png</li>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>-231 &lt;= nums[i] &lt;= 231 - 1</code></li>
+<li><code>0 &lt;= k &lt;= 105</code></li>
 </ul>
-<hr>
+<p><strong>进阶</strong>：</p>
+<ul>
+<li>尽可能想出更多的解决方案，至少有 <strong>三种</strong> 不同的方法可以解决这个问题。</li>
+</ul>
+<h1 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h1><p>该方法基于如下的事实：当我们将数组的元素向右移动 k 次后，尾部 k % n 个元素会移动至数组头部，其余元素向后移动 k%n 个位置。</p>
+<p>该方法为数组的翻转：我们可以先将所有元素翻转，这样尾部的 k%n 个元素就被移至数组头部，然后我们再翻转[0，k%n−1]区间的元素和[k%n，n−1]区间的元素即能得到最后的答案。</p>
+<p>我们以 n&#x3D;7，k&#x3D;3 为例进行如下展示：</p>
+<table>
+<thead>
+<tr>
+<th><strong>操作</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>原始数组</strong></td>
+<td>1 2 3 4 5 6 7</td>
+</tr>
+<tr>
+<td><strong>翻转所有元素</strong></td>
+<td>7 6 5 4 3 2 1</td>
+</tr>
+<tr>
+<td><strong>翻转[0，(k%n)−1]区间的元素</strong></td>
+<td>5 6 7 4 3 2 1</td>
+</tr>
+<tr>
+<td><strong>翻转[k%n，n−1]区间的元素</strong></td>
+<td>5 6 7 1 2 3 4</td>
+</tr>
+</tbody></table>
+<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="/img/post/%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84.png" srcset="/img/loading.gif" lazyload alt="轮转数组"></p>
+<p><img src="/img/page/%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84.png" srcset="/img/loading.gif" lazyload alt="轮转数组"></p>
+<h1 id="题解代码："><a href="#题解代码：" class="headerlink" title="题解代码："></a>题解代码：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@version</span> v1.0</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> OldGj 2025/2/19</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@apiNote</span> 189. 轮转数组</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">_015_rotate</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">rotate</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        k %= n;<br>        reverse(nums, <span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>);  <span class="hljs-comment">// 反转整个字符串</span><br>        reverse(nums, <span class="hljs-number">0</span>, k - <span class="hljs-number">1</span>);  <span class="hljs-comment">// 反转区间为前 k 的子串</span><br>        reverse(nums, k, n - <span class="hljs-number">1</span>);  <span class="hljs-comment">// 反转区间为k到末尾的子串</span><br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 反转nums数组start到end区间的数字</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reverse</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> start, <span class="hljs-type">int</span> end)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start, j = end; i &lt; j; i++, j--) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[j];<br>            nums[j] = nums[i];<br>            nums[i] = temp;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -325,6 +367,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hot100%E7%AE%97%E6%B3%95/" class="category-chain-item">hot100算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
+      
+    </div>
   
 </div>
 
@@ -334,20 +406,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>013.最大子数组和</div>
-      <div>http://example.com/2025/02/21/013-最大子数组和/</div>
+      <div>015.轮转数组</div>
+      <div>http://example.com/2025/02/18/015-轮转数组/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>John Doe</div>
+          <div>Ovo-</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月21日</div>
+          <div>2025年2月18日</div>
         </div>
       
       
@@ -379,9 +451,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/21/014-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" title="014.合并区间">
+                      <a href="/2025/02/21/016-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/" title="016.除自身以外数组的乘积">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">014.合并区间</span>
+                        <span class="hidden-mobile">016.除自身以外数组的乘积</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -389,8 +461,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/21/017-%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/" title="017.缺失的第一个正数">
-                        <span class="hidden-mobile">017.缺失的第一个正数</span>
+                      <a href="/2025/02/17/014-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" title="014.合并区间">
+                        <span class="hidden-mobile">014.合并区间</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

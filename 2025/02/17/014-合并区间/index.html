@@ -16,27 +16,30 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Ovo-">
   <meta name="keywords" content="hexo, blog, fluid theme, personal blog">
   
-    <meta name="description" content="title: 012.最小覆盖子串date: 2025-02-15 22:54:07author: Ovo-tags:  算法 刷题categories: hot100算法excerpt: 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。banner_img: &#x2F;img&#x2F;bg">
+    <meta name="description" content="以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] &#x3D; [start, end] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="015.轮转数组">
-<meta property="og:url" content="http://example.com/2025/02/21/015-%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:title" content="014.合并区间">
+<meta property="og:url" content="http://example.com/2025/02/17/014-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/index.html">
 <meta property="og:site_name" content="Ovo&#39;s Blog">
-<meta property="og:description" content="title: 012.最小覆盖子串date: 2025-02-15 22:54:07author: Ovo-tags:  算法 刷题categories: hot100算法excerpt: 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。banner_img: &#x2F;img&#x2F;bg">
+<meta property="og:description" content="以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] &#x3D; [start, end] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-21T14:14:27.000Z">
-<meta property="article:modified_time" content="2025-02-21T14:16:12.197Z">
+<meta property="og:image" content="http://example.com/img/page/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4.png">
+<meta property="article:published_time" content="2025-02-17T14:14:11.000Z">
+<meta property="article:modified_time" content="2025-02-25T15:27:25.174Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="hexo, blog, fluid theme, personal blog">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/page/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>015.轮转数组 - Ovo&#39;s Blog</title>
+  <title>014.合并区间 - Ovo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -200,13 +203,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/bg/%E4%BB%A3%E7%A0%81%E6%B2%A1%E5%86%99%E5%AE%8C.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/bg/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="015.轮转数组"></span>
+            <span id="subtitle" data-typed-text="014.合并区间"></span>
           
         </div>
 
@@ -216,14 +219,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        John Doe
+        Ovo-
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-21 22:14" pubdate>
-          2025年2月21日 晚上
+        <time datetime="2025-02-17 22:14" pubdate>
+          2025年2月17日 晚上
         </time>
       </span>
     
@@ -235,7 +238,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          99 字
+          768 字
         
       </span>
     
@@ -247,7 +250,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -293,13 +296,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">015.轮转数组</h1>
+            <h1 id="seo-header">014.合并区间</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2025-02-21T22:16:12+08:00
+                    本文最后更新于：2025-02-25T23:27:25+08:00
                   
                   
 
@@ -309,14 +312,29 @@
             
               <div class="markdown-body">
                 
-                <hr>
-<p>title: 012.最小覆盖子串<br>date: 2025-02-15 22:54:07<br>author: Ovo-<br>tags:</p>
+                <h1 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56. 合并区间"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-intervals/">56. 合并区间</a></h1><p>以数组 <code>intervals</code> 表示若干个区间的集合，其中单个区间为 <code>intervals[i] = [starti, endi]</code> 。请你合并所有重叠的区间，并返回 <em>一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间</em> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：intervals = [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">8</span>,<span class="hljs-number">10</span>],[<span class="hljs-number">15</span>,<span class="hljs-number">18</span>]]<br>输出：[[<span class="hljs-number">1</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">8</span>,<span class="hljs-number">10</span>],[<span class="hljs-number">15</span>,<span class="hljs-number">18</span>]]<br>解释：区间 [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>] 和 [<span class="hljs-number">2</span>,<span class="hljs-number">6</span>] 重叠, 将它们合并为 [<span class="hljs-number">1</span>,<span class="hljs-number">6</span>].<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：intervals = <span class="hljs-string">[[1,4],[4,5]]</span><br>输出：<span class="hljs-string">[[1,5]]</span><br>解释：区间 [<span class="hljs-number">1</span>,<span class="hljs-number">4</span>] 和 [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] 可被视为重叠区间。<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>算法</li>
-<li>刷题<br>categories:</li>
-<li>hot100算法<br>excerpt: 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “” 。<br>banner_img: &#x2F;img&#x2F;bg&#x2F;你的名字.jpg<br>index_img: &#x2F;img&#x2F;page&#x2F;最小覆盖子串.png</li>
+<li><code>1 &lt;= intervals.length &lt;= 104</code></li>
+<li><code>intervals[i].length == 2</code></li>
+<li><code>0 &lt;= starti &lt;= endi &lt;= 104</code></li>
 </ul>
-<hr>
+<h1 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h1><p>本题的本质是判断重叠区间问题。</p>
+<p>对于这类问题，我们需要先对区间<strong>进行排序，让所有的相邻区间尽可能的重叠在一起</strong>，按左边界，或者右边界排序都可以，处理逻辑稍有不同。</p>
+<p>按照左边界从小到大排序之后，如果 <code>intervals[i][0] &lt;= intervals[i - 1][1]</code> 即 <strong>intervals[i] 的左边界 &lt;&#x3D; intervals[i - 1]的右边界，则一定有重叠</strong>。（本题相邻区间也算重叠，所以是&lt;&#x3D;）</p>
+<p>这么说有点抽象，看图：（注意图中区间都是按照左边界排序之后了）</p>
+<p><img src="/img/page/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4.png" srcset="/img/loading.gif" lazyload alt="合并区间"></p>
+<p><img src="/img/post/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B42.png" srcset="/img/loading.gif" lazyload alt="合并区间"></p>
+<p>知道如何判断重复之后，剩下的就是合并了，如何去模拟合并区间呢？</p>
+<p>其实就是用合并区间后左边界和右边界，作为一个新的区间，加入到 result 数组里就可以了。如果没有合并就把原区间加入到 result 数组。</p>
+<p>在代码实现层面，我们需要一个<code>LinkedList</code>类型的变量模拟栈的操作，存储合并后的区间，默认先将排序后的第一个区间加入该变量中，然后依次遍历区间，判断是否重复**「如果后面的区间的左边界 小于等于 前面的区间的右边界，说明有区间重叠」**，如果重复，则将重复的区间弹出，计算合并后的区间左右边界后，加入合并后的区间，如果没有重复，则直接加入到该变量中即可</p>
+<h1 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] merge(<span class="hljs-type">int</span>[][] intervals) &#123;<br>    LinkedList&lt;<span class="hljs-type">int</span>[]&gt; res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>    <span class="hljs-comment">// 按照区间的左边界将区间排序</span><br>    Arrays.sort(intervals, (o1, o2) -&gt; Integer.compare(o1[<span class="hljs-number">0</span>], o2[<span class="hljs-number">0</span>]));<br>    <span class="hljs-comment">// 默认加入第一个区间</span><br>    res.add(intervals[<span class="hljs-number">0</span>]);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; intervals.length; i++) &#123;<br>        <span class="hljs-comment">// 如果后面的区间的左边界 小于等于 前面的区间的右边界，说明有区间重叠</span><br>        <span class="hljs-keyword">if</span> (intervals[i][<span class="hljs-number">0</span>] &lt;= res.getLast()[<span class="hljs-number">1</span>]) &#123;<br>            <span class="hljs-comment">// 合并后的区间左边界为前面区间的左边界（因为是排好序的）</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> res.getLast()[<span class="hljs-number">0</span>];<br>            <span class="hljs-comment">// 合并后的区间右边界为两个重叠区间的更大的右边界；</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> Math.max(res.getLast()[<span class="hljs-number">1</span>], intervals[i][<span class="hljs-number">1</span>]);<br>            <span class="hljs-comment">// 删除最后一个区间</span><br>            res.removeLast();<br>            <span class="hljs-comment">// 加入合并后的区间</span><br>            res.addLast(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;left, right&#125;);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 没有区间重叠，直接添加</span><br>            res.addLast(intervals[i]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res.toArray(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[res.size()][]);<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -325,6 +343,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hot100%E7%AE%97%E6%B3%95/" class="category-chain-item">hot100算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
+      
+    </div>
   
 </div>
 
@@ -334,20 +382,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>015.轮转数组</div>
-      <div>http://example.com/2025/02/21/015-轮转数组/</div>
+      <div>014.合并区间</div>
+      <div>http://example.com/2025/02/17/014-合并区间/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>John Doe</div>
+          <div>Ovo-</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月21日</div>
+          <div>2025年2月17日</div>
         </div>
       
       
@@ -379,12 +427,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2025/02/18/015-%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/" title="015.轮转数组">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">015.轮转数组</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/21/014-%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" title="014.合并区间">
-                        <span class="hidden-mobile">014.合并区间</span>
+                      <a href="/2025/02/16/013-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" title="013.最大子数组和">
+                        <span class="hidden-mobile">013.最大子数组和</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
