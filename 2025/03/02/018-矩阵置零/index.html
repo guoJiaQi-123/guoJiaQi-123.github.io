@@ -19,27 +19,27 @@
   <meta name="author" content="Ovo-">
   <meta name="keywords" content="hexo, blog, fluid theme, personal blog">
   
-    <meta name="description" content="给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。">
+    <meta name="description" content="给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="017.缺失的第一个正数">
-<meta property="og:url" content="http://example.com/2025/02/21/017-%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/index.html">
+<meta property="og:title" content="018.矩阵置零">
+<meta property="og:url" content="http://example.com/2025/03/02/018-%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/index.html">
 <meta property="og:site_name" content="Ovo&#39;s Blog">
-<meta property="og:description" content="给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。">
+<meta property="og:description" content="给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/page/%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0.png">
-<meta property="article:published_time" content="2025-02-21T14:00:38.000Z">
-<meta property="article:modified_time" content="2025-02-21T14:24:26.528Z">
+<meta property="og:image" content="http://example.com/img/page/%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.png">
+<meta property="article:published_time" content="2025-03-02T02:34:46.000Z">
+<meta property="article:modified_time" content="2025-03-02T02:41:38.042Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/page/%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0.png">
+<meta name="twitter:image" content="http://example.com/img/page/%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>017.缺失的第一个正数 - Ovo&#39;s Blog</title>
+  <title>018.矩阵置零 - Ovo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="017.缺失的第一个正数"></span>
+            <span id="subtitle" data-typed-text="018.矩阵置零"></span>
           
         </div>
 
@@ -225,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-21 22:00" pubdate>
-          2025年2月21日 晚上
+        <time datetime="2025-03-02 10:34" pubdate>
+          2025年3月2日 上午
         </time>
       </span>
     
@@ -238,7 +238,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          736 字
+          1k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          9 分钟
         
       </span>
     
@@ -296,13 +296,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">017.缺失的第一个正数</h1>
+            <h1 id="seo-header">018.矩阵置零</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2025-02-21T22:24:26+08:00
+                    本文最后更新于：2025-03-02T10:41:38+08:00
                   
                   
 
@@ -312,28 +312,39 @@
             
               <div class="markdown-body">
                 
-                <h1 id="41-缺失的第一个正数"><a href="#41-缺失的第一个正数" class="headerlink" title="41. 缺失的第一个正数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-missing-positive/">41. 缺失的第一个正数</a></h1><p>给你一个未排序的整数数组 <code>nums</code> ，请你找出其中没有出现的最小的正整数。</p>
-<p>请你实现时间复杂度为 <code>O(n)</code> 并且只使用常数级别额外空间的解决方案。</p>
+                <h1 id="73-矩阵置零"><a href="#73-矩阵置零" class="headerlink" title="73. 矩阵置零"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/set-matrix-zeroes/">73. 矩阵置零</a></h1><p>给定一个 <code>*m* x *n*</code> 的矩阵，如果一个元素为 <strong>0</strong> ，则将其所在行和列的所有元素都设为 <strong>0</strong> 。请使用 <strong><a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 算法**。**</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[1,2,0]</span><br>输出：3<br>解释：范围 <span class="hljs-comment">[1,2]</span> 中的数字都在数组中。<br></code></pre></td></tr></table></figure>
+<p><img src="/img/post/018-%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.assets/mat1.jpg" srcset="/img/loading.gif" lazyload alt="示例1"></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：matrix = <span class="hljs-string">[[1,1,1],[1,0,1],[1,1,1]]</span><br>输出：<span class="hljs-string">[[1,0,1],[0,0,0],[1,0,1]]</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">输入：nums </span>=<span class="hljs-string"> [3,4,-1,1]</span><br><span class="hljs-string">输出：2</span><br><span class="hljs-string">解释：1 在数组中，但 2 没有。</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：nums = <span class="hljs-string">[7,8,9,11,12]</span><br>输出：<span class="hljs-number">1</span><br>解释：最小的正数 <span class="hljs-number">1</span> 没有出现。<br></code></pre></td></tr></table></figure>
+<p><img src="/img/post/018-%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.assets/mat2.jpg" srcset="/img/loading.gif" lazyload alt="示例2"></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：matrix = <span class="hljs-string">[[0,1,2,0],[3,4,5,2],[1,3,1,5]]</span><br>输出：<span class="hljs-string">[[0,0,0,0],[0,4,5,0],[0,3,1,0]]</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>提示</strong>：</p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 105</code></li>
-<li><code>-231 &lt;= nums[i] &lt;= 231 - 1</code></li>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[0].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>-231 &lt;= matrix[i][j] &lt;= 231 - 1</code></li>
 </ul>
-<h2 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h2><p>由于题目要求我们**「只能使用常数级别的空间」**，而要找的数一定在[1, N + 1]左闭右闭（这里N是数组的长度）这个区间里。因此，我们可以就把原始的数组当做哈希表来使用。事实上，哈希表其实本身也是一个数组；</p>
-<p>我们要找的数就在[1, N + 1]里，最后N + 1这个元素我们不用找。因为在前面的N个元素都找不到的情况下，我们才返回N + 1；</p>
-<p>那么，我们可以采取这样的思路：就<strong>把1这个数放到下标为0的位置，2这个数放到下标为1的位置</strong>，按照这种思路整理一遍数组。然后我们再遍历一次数组，第1个遇到的它的值不等于下标的那个数，就是我们要找的缺失的第一个正数。</p>
-<p>这个思想就相当于我们自己编写哈希函数，这个哈希函数的规则特别简单，那就是数值为i的数映射到下标为i - 1的位置。</p>
-<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><p><img src="/img/post/017-%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/41%E5%9B%BE%E8%A7%A3.png" srcset="/img/loading.gif" lazyload><br><img src="/img/post/017-%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/41%E5%9B%BE%E8%A7%A3.gif" srcset="/img/loading.gif" lazyload></p>
-<h2 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> *  时间复杂度高</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> nums</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">firstMissingPositive</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-type">int</span>[] array = Arrays.stream(nums).distinct().filter(x -&gt; x &gt; <span class="hljs-number">0</span>).sorted().toArray();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; array.length; i++) &#123;<br>        <span class="hljs-keyword">if</span> (array[i] - <span class="hljs-number">1</span> != i) &#123;<br>            <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> array.length + <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-comment">// 和上面的思想一样，希望将 1放到0索引处，2放到1索引处，依次类推</span><br><span class="hljs-comment">// 使用了这原数组上交换元素的方法，时间复杂度和空间复杂度都低</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> *  时间复杂度，空间复杂度都低</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> nums</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">firstMissingPositive2</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-comment">// 如果遍历到3，我就希望把他放到索引2处，即swap(nums, i, nums[i] - 1);</span><br>        <span class="hljs-comment">// 这里i索引处的值nums[i]=3,交换他和 nums[i]-1「2」处的值，3就到了2索引处</span><br>        <span class="hljs-comment">// 前提是 nums[nums[i] - 1] != nums[i]</span><br>        <span class="hljs-keyword">while</span> (nums[i] &gt; <span class="hljs-number">0</span> &amp;&amp; nums[i] &lt;= nums.length &amp;&amp; nums[nums[i] - <span class="hljs-number">1</span>] != nums[i]) &#123;<br>            swap(nums, i, nums[i] - <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 如果不是0索引处为1，则缺的就是1，依次类推</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] - <span class="hljs-number">1</span> != i) &#123;<br>            <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> nums.length + <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i];<br>    nums[i] = nums[j];<br>    nums[j] = t;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>进阶</strong>：</p>
+<ul>
+<li>一个直观的解决方案是使用  <code>O(mn)</code> 的额外空间，但这并不是一个好的解决方案。</li>
+<li>一个简单的改进方案是使用 <code>O(m + n)</code> 的额外空间，但这仍然不是最好的解决方案。</li>
+<li>你能想出一个仅使用常量空间的解决方案吗？</li>
+</ul>
+<h1 id="题解思路"><a href="#题解思路" class="headerlink" title="题解思路"></a>题解思路</h1><p>我们可以用矩阵的第一行和第一列用于标记该行或者该列其余位置是否有 0 ，以达到 O(1) 的额外空间。但这样会导致原数组的第一行和第一列被修改，无法记录它们是否原本包含 0。因此我们需要<span class="label label-info">额外使用两个标记变量分别记录第一行和第一列是否原本包含 0</span>。</p>
+<p>在实际代码中，我们首先预处理出两个标记变量，接着使用其他行与列去处理第一行与第一列，然后反过来使用第一行与第一列去更新其他行与列，最后使用两个标记变量更新第一行与第一列即可。</p>
+<p><strong>题解步骤</strong>：</p>
+<ol>
+<li>定义两个标记变量，分别用于标记<span class="label label-danger">初始矩阵</span>的第一行和第一列是否有 0 </li>
+<li>从第二行第二列开始，遍历每个矩阵元素，如果存在0，则将0映射到第一行和第一列</li>
+<li>通过遍历第一行和第一列，将所有第一行第一列位置为0的该行和该列的其他位置全部置为0</li>
+<li>通过第一步记录的标记变量，对第一行和第一列作额外判断「是否需要将第一行第一列全部置为0」</li>
+</ol>
+<h1 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix)</span> &#123;<br>    <span class="hljs-comment">// 行</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> matrix.length;<br>    <span class="hljs-comment">// 列</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> matrix[<span class="hljs-number">0</span>].length;<br>    <span class="hljs-comment">// 1.定义两个标记变量，分别用于标记初始矩阵的第一行和第一列是否有 0 </span><br>    <span class="hljs-comment">// 标记位，标记初始矩阵的第一列是否有0</span><br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">flagCol0</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-comment">// 标记位，标记初始矩阵的第一行是否有0</span><br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">flagRow0</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] ints : matrix) &#123;<br>        <span class="hljs-keyword">if</span> (ints[<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-comment">// 标记初始矩阵的第一列是否有0</span><br>            flagCol0 = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++) &#123;<br>        <span class="hljs-keyword">if</span> (matrix[<span class="hljs-number">0</span>][j] == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-comment">// 标记初始矩阵的第一行是否有0</span><br>            flagRow0 = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 2.从第二行第二列开始，遍历每个矩阵元素，如果存在0，则将0映射到第一行和第一列</span><br>    <span class="hljs-comment">// 如果非第一行第一列的零，则将对应的行列第一位置为0</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; m; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>            <span class="hljs-keyword">if</span> (matrix[i][j] == <span class="hljs-number">0</span>) &#123;<br>                matrix[i][<span class="hljs-number">0</span>] = matrix[<span class="hljs-number">0</span>][j] = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">//3.通过遍历第一行和第一列，将所有第一行第一列位置为0的该行和该列的其他位置全部置为0</span><br>    <span class="hljs-comment">// 如果对应行或者列的第一位为0，则将这一行这一列所以的值都置0</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; m; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>            <span class="hljs-keyword">if</span> (matrix[i][<span class="hljs-number">0</span>] == <span class="hljs-number">0</span> || matrix[<span class="hljs-number">0</span>][j] == <span class="hljs-number">0</span>) &#123;<br>                matrix[i][j] = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 4. 通过第一步记录的标记变量，对第一行和第一列作额外判断「是否需要将第一行第一列全部置为0」</span><br>    <span class="hljs-comment">// 如果第一列原先就有0，则将第一列全部置0</span><br>    <span class="hljs-keyword">if</span> (flagCol0) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>            matrix[i][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 如果第一行原先就有0，则将第一行全部置0</span><br>    <span class="hljs-keyword">if</span> (flagRow0) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++) &#123;<br>            matrix[<span class="hljs-number">0</span>][j] = <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -381,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>017.缺失的第一个正数</div>
-      <div>http://example.com/2025/02/21/017-缺失的第一个正数/</div>
+      <div>018.矩阵置零</div>
+      <div>http://example.com/2025/03/02/018-矩阵置零/</div>
     </div>
     <div class="license-meta">
       
@@ -394,7 +405,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月21日</div>
+          <div>2025年3月2日</div>
         </div>
       
       
@@ -426,18 +437,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/02/018-%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/" title="018.矩阵置零">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">018.矩阵置零</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/21/016-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/" title="016.除自身以外数组的乘积">
-                        <span class="hidden-mobile">016.除自身以外数组的乘积</span>
+                      <a href="/2025/02/21/017-%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/" title="017.缺失的第一个正数">
+                        <span class="hidden-mobile">017.缺失的第一个正数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
